@@ -1,0 +1,124 @@
+---
+import Button from "./Button.astro"
+
+const TAGS = {
+  WEBDEV: {
+    name: "Web Development",
+    class: "text-[#0f0c11] border-2 border-[#B617E6] hover:bg-[#B617E6] hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]",
+  },
+  DESIGN: {
+    name: "Visual Design",
+    class: "text-[#0f0c11] border-2 border-[#FAAB00] hover:bg-[#B617E6] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]",
+  },
+  HTML: {
+    name: "HTML",
+    class: "text-[#0f0c11] border-2 border-[#2D063A] hover:bg-[#e34f26] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  CSS: {
+    name: "CSS",
+    class: "text-[#0f0c11] border-2 border-[#2D063A] hover:bg-[#264de4] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#F0DB4F] hover:border-transparent hover:text-[#0f0c11] dark:hover:text-[#0f0c11] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#3178c6] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  TAILWINDCSS: {
+    name: "TailwindCSS",
+    class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#3B82F6] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#0f0c11] hover:border-[#F4F4F4] hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+  NEXT: {
+    name: "NEXT.js",
+    class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#030303] hover:border-[#F4F4F4] hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+  },
+}
+
+const PROJECTS = [
+  {
+    title: "StreamByte",
+    description:
+      "HTML, CSS and JavaScript challenges website. Learn or practice your web development skills according to your level.",
+    link: "https://github.com/StreamByte/website",
+    image: "/projects/streambyte.webp",
+    tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ASTRO, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "malditojefe.chat",
+    description:
+      "Chat game using AI. Get a collection of perks while trying to avoid an angry boss.",
+    link: "https://malditojefe-chat.vercel.app/",
+    image: "/projects/malditojefe.png",
+    tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.NEXT, TAGS.TAILWINDCSS, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Yorokobi Sushi",
+    description:
+      "Logo and visual design for local sushi shop.",
+    link: "https://www.behance.net/gallery/196866463/Yorokobi-Sushi-Logo-Design",
+    image: "/projects/yorokobi.webp",
+    tags: [TAGS.DESIGN],
+  },
+  {
+    title: "Don Monchis",
+    description:
+      "Visual design and web development for a fast food restaurant.",
+    link: "https://www.behance.net/gallery/196862755/Don-Monchis-Logo-Design",
+    image: "/projects/donmonchis.webp",
+    tags: [TAGS.DESIGN],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-12">
+  {
+    PROJECTS.map(({ image, title, description, tags, link }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-fit">
+    <div 
+        class="relative flex flex-col items-center 
+        col-span-6 row-span-5 gap-8 
+        transition duration-500 ease-in-out transform 
+        shadow-xl overflow-clip rounded-lg 
+        sm:rounded-xl md:group-hover:translate-x-2 md:group-hover:shadow-2xl 
+        lg:border-[2px] lg:border-[#0f0c11] lg:hover:border-[#B617E6]/50 lg:hover:bg-[#F4F4F4]/20">
+
+      <a href={link} target="_blank" rel="noopener">
+        <img alt="Project screenshot" class="object-cover object-top w-full sm:w-fit h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-125" src={image} />
+      </a>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full bg-[#171717]/20 border-2 border-[#F4F4F4]/10 rounded-lg pt-4 px-4 md:w-1/2 md:max-w-lg dark:bg-[#171717]/40">
+    <h3 class="text-2xl font-bold text-[#0f0c11] dark:text-[#F4F4F4]">
+      {title}
+    </h3>
+    <div>
+      <div class="flex-1 mt-2 text-[#0f0c11] font-medium dark:text-[#F4F4F4]/80">
+        {description}
+      </div>
+      <ul class="flex flex-wrap gap-x-1 gap-y-2.5 mb-6 mt-auto pt-4">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex mr-1 rounded-full text-xs font-medium ${tag.class} py-1.5 px-2 whitespace-nowrap `}
+            >
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+

@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: "May 2024 - Present",
+        title: "Web Designer & Developer",
+        company: "Freelance",
+        description: "I started working in web design and development projects independently in May 2024. Helping clients and local businesses develop their brand and create design assets using the Adobe Creative Cloud tools, design websites and create design systems and libraries in Figma, and front-end development focused on CSS",
+        stack: "HTML | CSS | JavaScript | React | Astro | NEXT.js | Figma | AdobeCC"
+    },
+]
+---
+
+<ol class="relative ml-1">
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem { ... experience} />
+            </li>
+        ))
+    }              
+
+</ol>
