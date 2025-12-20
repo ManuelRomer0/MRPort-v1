@@ -17,22 +17,22 @@ const { date, title, description, company, stack } = Astro.props;
     >
     </div>
     <h3
-        class="text-lg font-semibold text-[#B617E6] hover:text-[#FAAB00] dark:text-[#FAAB00] hover:dark:text-[#B617E6] transition px-10 pt-5"
+        class="text-lg font-semibold text-[#B617E6] hover:text-[#FAAB00] dark:text-[#FAAB00] hover:dark:text-[#B617E6] transition px-4 md:px-10 pt-5"
     >
         {title} - {company}
     </h3>
     <time
-        class="mb-1 text-xs font-medium leading-none text-[#0f0c11] dark:text-[#F4F4F4] opacity-80 px-10"
+        class="mb-1 text-xs font-medium leading-none text-[#0f0c11] dark:text-[#F4F4F4] opacity-80 px-4 md:px-10"
         >{date}</time
     >
     <p
-        class="mb-4 text-base font-semibold text-[#0f0c11] dark:text-[#F4F4F4]/80 text-pretty mt-2 px-10 pb-2"
+        class="mb-4 text-base font-semibold text-[#0f0c11] dark:text-[#F4F4F4]/80 text-pretty mt-2 px-4 md:px-10 pb-2"
     >
         {description}.
     </p>
     {
         stack && (
-            <ul class="flex flex-wrap gap-2 px-10 pb-5">
+            <ul class="flex flex-wrap gap-2 px-4 md:px-10 pb-5">
                 {stack.split("|").map((tech) => (
                     <li class="px-2 py-1 text-xs font-semibold text-[#0f0c11] bg-white/60 dark:bg-white/10 dark:text-white rounded-full border border-black/10 dark:border-white/10">
                         {tech.trim()}

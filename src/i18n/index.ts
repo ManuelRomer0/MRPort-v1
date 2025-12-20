@@ -102,7 +102,7 @@ export const LANGUAGES = {
                 description: "HTML, CSS and JavaScript challenges website. Learn or practice your web development skills according to your level.",
                 link: "https://github.com/ManuelRomer0/Mrstore-Front",
                 image: "/MRPort-v1/projects/mrstore.webp",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.CSS, TAGS.JAVASCRIPT],
+                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.JAVASCRIPT, TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.PRISMA],
             },
         ]
     },
@@ -148,7 +148,7 @@ export const LANGUAGES = {
                 description: "Sitio web de retos HTML, CSS y JavaScript. Aprende o practica tus habilidades de desarrollo web según tu nivel.",
                 link: "https://github.com/ManuelRomer0/Mrstore-Front",
                 image: "/MRPort-v1/projects/mrstore.webp",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.CSS, TAGS.JAVASCRIPT],
+                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.JAVASCRIPT, TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.PRISMA],
             },
         ]
     }

@@ -13,29 +13,66 @@ const langUrl = isSpanish ? base + "/" : base + "/es";
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 animate-slide-in-top"
+  class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2 animate-slide-in-top px-4"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full gap-2 text-[#0f0c11] dark:text-[#f4f4f4] justify-center items-center md:gap-6"
+    class="flex px-3 py-1 text-sm font-medium rounded-full gap-2 text-[#0f0c11] dark:text-[#f4f4f4] justify-center items-center md:gap-5 shadow-lg ring-1 backdrop-blur bg-white/50 dark:bg-[#0f0c11]/50 ring-[#f4f4f4]/10"
   >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00]"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <ThemeToggle />
-    <a
-      href={langUrl}
-      class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00] font-bold"
+    <!-- Links - Hidden on very small screens, or we can use a simpler approach -->
+    <div class="hidden sm:flex items-center gap-1 md:gap-4">
+      {
+        navItems.map((link) => (
+          <a
+            class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00]"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Mobile Dropdown or just Icons? Let's use icons for mobile if text is too long -->
+    <div class="flex sm:hidden items-center gap-0">
+      {
+        navItems.map((link) => (
+          <a
+            class="relative block px-1.5 py-1 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00]"
+            aria-label={link.label}
+            href={link.url}
+          >
+            <span class="text-[9px] uppercase font-bold tracking-tighter">
+              {link.title === "Experience"
+                ? "Exp"
+                : link.title === "Experiencia"
+                  ? "Exp"
+                  : link.title === "Projects"
+                    ? "Proj"
+                    : link.title === "Proyectos"
+                      ? "Proj"
+                      : link.title === "Contact"
+                        ? "Cont"
+                        : link.title === "Contacto"
+                          ? "Cont"
+                          : link.title}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div
+      class="flex items-center gap-2 border-l border-black/10 dark:border-white/10 ml-1 pl-2"
     >
-      {langButtonText}
-    </a>
+      <ThemeToggle />
+      <a
+        href={langUrl}
+        class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00] font-bold text-xs md:text-sm"
+      >
+        {langButtonText}
+      </a>
+    </div>
   </nav>
 </header>
 
@@ -90,7 +127,7 @@ const langUrl = isSpanish ? base + "/" : base + "/es";
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-[#B617E6]/40 ring-[#f4f4f4]/10;
+      @apply shadow-2xl ring-1 backdrop-blur bg-[#B617E6]/40 ring-[#f4f4f4]/10;
     }
   }
 
@@ -100,7 +137,7 @@ const langUrl = isSpanish ? base + "/" : base + "/es";
 
   @keyframes nav-shadown-dark {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-[#0f0c11] ring-[#f4f4f4]/10;
+      @apply shadow-2xl ring-1 backdrop-blur bg-[#0f0c11]/80 ring-[#f4f4f4]/10;
     }
   }
 </style>

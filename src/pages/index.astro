@@ -53,9 +53,11 @@ const { hero, experience, projects, sectionTitles, form } = LANGUAGES.en;
 
 			<!-- Introduction -->
 			<h2
-				class="justify-center text-xl leading-tight font-bold text-wrap max-w-[1000px] md:text-5xl"
+				class="justify-center text-3xl leading-tight font-bold text-wrap max-w-[1000px] md:text-5xl"
 			>
-				<p class="text-[#0f0c11] dark:text-[#F4F4F4]/80">
+				<p
+					class="text-[#0f0c11] dark:text-[#F4F4F4]/80 text-xl md:text-5xl"
+				>
 					{hero.intro1}
 				</p>
 				<span class="text-[#0f0c11] dark:text-[#F4F4F4]/80"
@@ -71,38 +73,43 @@ const { hero, experience, projects, sectionTitles, form } = LANGUAGES.en;
 			</h2>
 
 			<!-- Buttons -->
-			<ul class="flex gap-2 mt-8 md:mt-12 md:gap-4">
-				<a href="/MRPort-v1/HD-MR1.pdf" target="_blank" rel="noopener">
-					<Button>
-						<p class="flex gap-2">
+			<ul class="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12">
+				<a
+					href="/MRPort-v1/HD-MR1.pdf"
+					target="_blank"
+					rel="noopener"
+					class="w-full sm:w-auto"
+				>
+					<Button class="w-full justify-center">
+						<p class="flex gap-2 items-center">
 							<img
 								src="/MRPort-v1/icons/notebook.svg"
 								alt="Button icon"
-								class="w-3 md:w-7"
+								class="size-5 md:size-7"
 							/>
 							{hero.downloadResume}
 						</p>
 					</Button>
 				</a>
-				<a href="#projects">
-					<Button>
-						<p class="flex gap-2">
+				<a href="#projects" class="w-full sm:w-auto">
+					<Button class="w-full justify-center">
+						<p class="flex gap-2 items-center">
 							<img
 								src="/MRPort-v1/icons/eye.svg"
 								alt="Button icon"
-								class="w-3 md:w-7"
+								class="size-5 md:size-7"
 							/>
 							{hero.viewProjects}
 						</p>
 					</Button>
 				</a>
-				<a href="#contact">
-					<Button>
-						<p class="flex gap-2">
+				<a href="#contact" class="w-full sm:w-auto">
+					<Button class="w-full justify-center">
+						<p class="flex gap-2 items-center">
 							<img
 								src="/MRPort-v1/icons/link.svg"
 								alt="Button icon"
-								class="w-3 md:w-7"
+								class="size-5 md:size-7"
 							/>
 							{hero.socialLinks}
 						</p>
