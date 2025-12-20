@@ -1,14 +1,15 @@
 ---
-const currentPath = Astro.url.pathname;
-const isSpanish = currentPath.startsWith("/es");
-
 import { LANGUAGES } from "../i18n/index";
 import ThemeToggle from "./ThemeToggle.astro";
 
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+const currentPath = Astro.url.pathname;
+const isSpanish = currentPath.includes(base + "/es");
+
 const navItems = isSpanish ? LANGUAGES.es.nav : LANGUAGES.en.nav;
 const langButtonText = isSpanish ? "EN" : "ES";
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const langUrl = isSpanish ? `${base}/` : `${base}/es`;
+const langUrl = isSpanish ? base + "/" : base + "/es";
 ---
 
 <header

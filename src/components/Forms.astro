@@ -20,20 +20,21 @@ const { form } = Astro.props;
       {form.title}
     </h2>
     <p class="font-light text-[#0f0c11] dark:text-[#e8e4ea]/80 sm:text-xl">
-      {form.subtitle}<p>
-        <a
-          href="mailto:manuelromeromoreno13@gmail.com"
-          class="flex font-light text-[#B617E6] dark:text-[#FAAB00] mt-8 sm:text-xl"
-          >manuelromeromoreno13@gmail.com<a>
-            <Social />
-            <img
-              src="/MRPort-v1/logo-6.png"
-              alt="Cat over laptop image"
-              class="absolute w-20 sm:w-40 ml-44 sm:ml-80 md:ml-96 -mt-32 sm:-mt-28 hover:animate-tada"
-            />
-          </a>
-        </a>
-      </p>
+      {form.subtitle}
     </p>
+    <div class="mt-8">
+      <a
+        href="mailto:manuelromeromoreno13@gmail.com"
+        class="flex font-light text-[#B617E6] dark:text-[#FAAB00] sm:text-xl mb-4"
+      >
+        manuelromeromoreno13@gmail.com
+      </a>
+      <Social />
+      <img
+        src="/MRPort-v1/logo-6.png"
+        alt="Cat over laptop image"
+        class="absolute w-20 sm:w-40 ml-44 sm:ml-80 md:ml-96 -mt-32 sm:-mt-28 hover:animate-tada"
+      />
+    </div>
   </div>
 </section>

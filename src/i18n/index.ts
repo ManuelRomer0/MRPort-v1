@@ -36,6 +36,26 @@ const TAGS = {
         name: "NEXT.js",
         class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#030303] hover:border-[#F4F4F4] hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
     },
+    ANGULAR: {
+        name: "Angular",
+        class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#dd0031] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+    },
+    NESTJS: {
+        name: "NestJS",
+        class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#e0234e] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+    },
+    PRISMA: {
+        name: "Prisma",
+        class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#2d3748] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+    },
+    POSTGRESQL: {
+        name: "PostgreSQL",
+        class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#336791] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+    },
+    GITHUB: {
+        name: "GitHub",
+        class: "border-2 border-[#2D063A] text-[#0f0c11] hover:bg-[#181717] hover:border-transparent hover:text-[#F4F4F4] hover:scale-105 transition duration-200 dark:text-[#F4F4F4]"
+    },
 }
 
 export const LANGUAGES = {
@@ -71,39 +91,18 @@ export const LANGUAGES = {
                 date: "Oct 2025 - Present",
                 title: "Web Designer & Developer",
                 company: "Freelance",
-                description: "I started working in web design and development projects independently in May 2024. Helping clients and local businesses develop their brand and create design assets using the Adobe Creative Cloud tools, design websites and create design systems and libraries in Figma, and front-end development focused on CSS",
-                stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgresSQL"
+                description: "Since April 2025, I have been working independently in web design and development, collaborating with clients and local businesses to create and strengthen their digital presence. I develop websites and applications using technologies such as Angular and Tailwind CSS on the frontend, and Node.js with NestJS and PostgreSQL on the backend.",
+                stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | Prisma | GitHub",
                 // stack: "HTML | CSS | JavaScript | React | Astro | NEXT.js | Figma | AdobeCC" 
             },
         ],
         projects: [
             {
-                title: "StreamByte",
+                title: "MrStore",
                 description: "HTML, CSS and JavaScript challenges website. Learn or practice your web development skills according to your level.",
-                link: "https://github.com/StreamByte/website",
-                image: "/MRPort-v1/projects/streambyte.webp",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ASTRO, TAGS.CSS, TAGS.JAVASCRIPT],
-            },
-            {
-                title: "malditojefe.chat",
-                description: "Chat game using AI. Get a collection of perks while trying to avoid an angry boss.",
-                link: "https://malditojefe-chat.vercel.app/",
-                image: "/MRPort-v1/projects/malditojefe.png",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.NEXT, TAGS.TAILWINDCSS, TAGS.TYPESCRIPT],
-            },
-            {
-                title: "Yorokobi Sushi",
-                description: "Logo and visual design for local sushi shop.",
-                link: "https://www.behance.net/gallery/196866463/Yorokobi-Sushi-Logo-Design",
-                image: "/MRPort-v1/projects/yorokobi.webp",
-                tags: [TAGS.DESIGN],
-            },
-            {
-                title: "Don Monchis",
-                description: "Visual design and web development for a fast food restaurant.",
-                link: "https://www.behance.net/gallery/196862755/Don-Monchis-Logo-Design",
-                image: "/MRPort-v1/projects/donmonchis.webp",
-                tags: [TAGS.DESIGN],
+                link: "https://github.com/ManuelRomer0/Mrstore-Front",
+                image: "/MRPort-v1/projects/mrstore.webp",
+                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.CSS, TAGS.JAVASCRIPT],
             },
         ]
     },
@@ -139,38 +138,17 @@ export const LANGUAGES = {
                 date: "Oct 2025 - Presente",
                 title: "Diseñador Web y Desarrollador",
                 company: "Freelance",
-                description: "Empecé a trabajar en proyectos de diseño y desarrollo web de forma independiente en mayo de 2024. Ayudando a clientes y negocios locales a desarrollar su marca y crear activos de diseño utilizando las herramientas de Adobe Creative Cloud, diseñar sitios web y crear sistemas de diseño y bibliotecas en Figma, y desarrollo front-end centrado en CSS",
-                stack: "HTML | CSS | JavaScript | React | Astro | NEXT.js | Figma | AdobeCC"
+                description: "Desde abril de 2025, he estado trabajando de forma independiente en diseño y desarrollo web, colaborando con clientes y negocios locales para crear y fortalecer su presencia digital. Desarrollo sitios web y aplicaciones utilizando tecnologías como Angular y Tailwind CSS en el frontend, y Node.js con NestJS y PostgreSQL en el backend.",
+                stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | Prisma | GitHub",
             },
         ],
         projects: [
             {
-                title: "StreamByte",
+                title: "MrStore",
                 description: "Sitio web de retos HTML, CSS y JavaScript. Aprende o practica tus habilidades de desarrollo web según tu nivel.",
-                link: "https://github.com/StreamByte/website",
-                image: "/MRPort-v1/projects/streambyte.webp",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ASTRO, TAGS.CSS, TAGS.JAVASCRIPT],
-            },
-            {
-                title: "malditojefe.chat",
-                description: "Juego de chat usando IA. Consigue una colección de ventajas mientras intentas evitar a un jefe enfadado.",
-                link: "https://malditojefe-chat.vercel.app/",
-                image: "/MRPort-v1/projects/malditojefe.png",
-                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.NEXT, TAGS.TAILWINDCSS, TAGS.TYPESCRIPT],
-            },
-            {
-                title: "Yorokobi Sushi",
-                description: "Logotipo y diseño visual para tienda de sushi local.",
-                link: "https://www.behance.net/gallery/196866463/Yorokobi-Sushi-Logo-Design",
-                image: "/MRPort-v1/projects/yorokobi.webp",
-                tags: [TAGS.DESIGN],
-            },
-            {
-                title: "Don Monchis",
-                description: "Diseño visual y desarrollo web para restaurante de comida rápida.",
-                link: "https://www.behance.net/gallery/196862755/Don-Monchis-Logo-Design",
-                image: "/MRPort-v1/projects/donmonchis.webp",
-                tags: [TAGS.DESIGN],
+                link: "https://github.com/ManuelRomer0/Mrstore-Front",
+                image: "/MRPort-v1/projects/mrstore.webp",
+                tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.CSS, TAGS.JAVASCRIPT],
             },
         ]
     }
