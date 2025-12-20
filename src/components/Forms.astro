@@ -1,9 +1,10 @@
 ---
 import Social from "./Social.astro";
+
+const { form } = Astro.props;
 ---
 
 <section>
-  <img src="/logo-1.svg" alt="Brand Symbols" class="w-[100px] m-auto mt-20" />
   <div
     class="bg-[#171717]/20 border-2 border-[#e8e4ea]/10 py-8 px-8 rounded-lg mx-auto max-w-[600px] mt-20 dark:bg-[#171717]/40"
   >
@@ -16,10 +17,10 @@ import Social from "./Social.astro";
     <h2
       class="mb-2 text-3xl tracking-tight font-extrabold text-[#0f0c11] dark:text-[#e8e4ea] md:text-4xl"
     >
-      Ready to build a site that captures your vision?
+      {form.title}
     </h2>
     <p class="font-light text-[#0f0c11] dark:text-[#e8e4ea]/80 sm:text-xl">
-      Let's make it true! ✨<p>
+      {form.subtitle}<p>
         <a
           href="mailto:manuelromeromoreno13@gmail.com"
           class="flex font-light text-[#B617E6] dark:text-[#FAAB00] mt-8 sm:text-xl"

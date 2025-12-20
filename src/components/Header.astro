@@ -1,28 +1,13 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+const currentPath = Astro.url.pathname;
+const isSpanish = currentPath.startsWith("/es");
 
-const navItems = [
-  {
-    title: "Home",
-    label: "home",
-    url: "#",
-  },
-  {    
-    title: "Experience",
-    label: "experience",
-    url:"/#experience",
-  },
-  {    
-    title: "Projects",
-    label: "projects",
-    url:"/#projects",
-  },
-  {    
-    title: "Contact",
-    label: "contact",
-    url:"/#contact",
-  },
-]
+import { LANGUAGES } from "../i18n/index";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const navItems = isSpanish ? LANGUAGES.es.nav : LANGUAGES.en.nav;
+const langButtonText = isSpanish ? "EN" : "ES";
+const langUrl = isSpanish ? "/" : "/es";
 ---
 
 <header
@@ -32,72 +17,78 @@ const navItems = [
     class="flex px-3 text-sm font-medium rounded-full gap-2 text-[#0f0c11] dark:text-[#f4f4f4] justify-center items-center md:gap-6"
   >
     {
-        navItems.map((link) => (
-            <a
-                class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00]"
-                aria-label={link.label}
-                href={link.url}
-            >
-                {link.title}
-            </a>
-        ))
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00]"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
     }
     <ThemeToggle />
+    <a
+      href={langUrl}
+      class="relative block px-2 py-2 transition hover:text-[#FAAB00] dark:hover:text-[#FAAB00] font-bold"
+    >
+      {langButtonText}
+    </a>
   </nav>
 </header>
 
 <script>
-    document.addEventListener("astro:page-load", () => {
-      const sections = document.querySelectorAll("section")
-      const navItems = document.querySelectorAll("header nav a")
-  
-      const callback = (entries: any[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navItems.forEach((item) => {
-              if (item.getAttribute("aria-label") == entry.target.id) {
-                item.classList.add("text-yellow-500")
-              } else {
-                item.classList.remove("text-yellow-500")
-              }
-            })
-          }
-        })
-      }
-  
-      const observer = new IntersectionObserver(callback, {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.3,
-      })
-  
-      sections.forEach((section) => {
-        observer.observe(section)
-      })
-  
-      // Cleanup function
-      document.onvisibilitychange = () => {
-        if (document.visibilityState === "hidden") {
-          observer.disconnect()
-        } else {
-          sections.forEach((section) => {
-            observer.observe(section)
-          })
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-yellow-500");
+            } else {
+              item.classList.remove("text-yellow-500");
+            }
+          });
         }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
       }
-    })
-  </script>
-  
-  <style>
-    nav {
-      animation: nav-shadown 1s linear both;
-      animation-timeline: scroll();
-      animation-range: 0 100px;
+    };
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-[#0f0c11] bg-[#B617E6]/40 ring-[#f4f4f4]/10;
     }
-  
-    @keyframes nav-shadown {
-      to {
-        @apply shadow-lg ring-1 backdrop-blur dark:bg-[#0f0c11] bg-[#B617E6]/40 ring-[#f4f4f4]/10;
-      }
-    }
-  </style>
+  }
+</style>

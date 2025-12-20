@@ -1,0 +1,149 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Badge from "../../components/Badge.astro";
+import Button from "../../components/Button.astro";
+import Experience from "../../components/Experience.astro";
+import Projects from "../../components/Projects.astro";
+import Forms from "../../components/Forms.astro";
+import Stack from "../../components/Stack.astro";
+
+import { LANGUAGES } from "../../i18n/index";
+const { hero, experience, projects, sectionTitles, form } = LANGUAGES.es;
+---
+
+<Layout
+    title="Manuel Romero | Portafolio de Diseño Web & Desarrollo de Software"
+    description="Contrata a Manuel Romero para diseñar tu marca y crear tu sitio web profesional. Amplia experiencia en diseño y desarrollo frontend."
+>
+    <main class="justify-center items-center px-4">
+        <SectionContainer class="py-44 pb-20">
+            <!-- Profile tags -->
+            <div class="flex flex-col mb-4">
+                <div class="flex">
+                    <img
+                        class="rounded-full size-16 mr-4 border-[2px] border-[#0f0c11] hover:border-[#FAAB00] hover:scale-110 transition duration-200 md:mr-6"
+                        src="https://avatars.githubusercontent.com/u/156974918?s=96&v=4"
+                        alt="GitHub Profile Picture"
+                    />
+                    <div>
+                        <h1
+                            class="text-[#0f0c11] dark:text-[#F4F4F4] font-semibold flex flex-row gap-x-4 text-lg text-start justify-start md:text-center md:text-2xl mb-2"
+                        >
+                            {hero.title}
+                        </h1>
+
+                        <a
+                            href="https://linkedin.com/in/tu-usuario"
+                            target="_blank"
+                            rel="noopener"
+                            class="flex justify-start gap-2 md:gap-4"
+                        >
+                            <Badge class="justify-center"
+                                >{hero.badgeAvailable}</Badge
+                            >
+                            <Badge class="justify-center"
+                                >{hero.badgeLocation}</Badge
+                            >
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <h2
+                class="justify-center text-xl leading-tight font-bold text-wrap max-w-[1000px] md:text-5xl"
+            >
+                <p class="text-[#0f0c11] dark:text-[#F4F4F4]/80">
+                    {hero.intro1}
+                </p>
+                <span class="text-[#0f0c11] dark:text-[#F4F4F4]/80"
+                    >{hero.intro2}
+                </span>
+                <span
+                    class="relative group animate-text bg-gradient-to-r from-[#B617E6] via-[#FAAB00] to-[#B617E6] bg-clip-text text-transparent transition"
+                    >{hero.introHighlight}
+                </span>
+                <span class="text-[#0f0c11] dark:text-[#F4F4F4]/80">
+                    {hero.intro3}</span
+                >
+            </h2>
+
+            <!-- Buttons -->
+            <ul class="flex gap-2 mt-8 md:mt-12 md:gap-4">
+                <a href="/JLGG-CV.pdf" target="_blank" rel="noopener">
+                    <Button>
+                        <p class="flex gap-2">
+                            <img
+                                src="/icons/notebook.svg"
+                                alt="Button icon"
+                                class="w-3 md:w-7"
+                            />
+                            {hero.downloadResume}
+                        </p>
+                    </Button>
+                </a>
+                <a href="/es#projects">
+                    <Button>
+                        <p class="flex gap-2">
+                            <img
+                                src="/icons/eye.svg"
+                                alt="Button icon"
+                                class="w-3 md:w-7"
+                            />
+                            {hero.viewProjects}
+                        </p>
+                    </Button>
+                </a>
+                <a href="/es#contact">
+                    <Button>
+                        <p class="flex gap-2">
+                            <img
+                                src="/icons/link.svg"
+                                alt="Button icon"
+                                class="w-3 md:w-7"
+                            />
+                            {hero.socialLinks}
+                        </p>
+                    </Button>
+                </a>
+            </ul>
+        </SectionContainer>
+
+        <SectionContainer id="experience">
+            <h3
+                class="text-[#0f0c11] dark:text-[#F4F4F4] text-4xl font-semibold md:pt-20 mb-12"
+            >
+                {sectionTitles.experience}
+            </h3>
+            <Experience experience={experience} />
+        </SectionContainer>
+
+        <SectionContainer id="projects">
+            <h3
+                class="text-[#0f0c11] dark:text-[#F4F4F4] text-4xl font-semibold md:pt-20 mb-12"
+            >
+                {sectionTitles.projects}
+            </h3>
+            <Projects projects={projects} />
+        </SectionContainer>
+
+        <SectionContainer id="stack">
+            <Stack />
+        </SectionContainer>
+
+        <SectionContainer id="contact">
+            <Forms form={form} />
+        </SectionContainer>
+    </main>
+    <a
+        href="#"
+        class="fixed fill-[#F4F4F4] p-9 bottom-12 right-6 hidden md:block hover:scale-110 transition opacity-60 hover:opacity-100"
+    >
+        <img
+            class="size-12"
+            src="/icons/circle-arrow-up.svg"
+            alt="Scroll to top"
+        />
+    </a>
+</Layout>

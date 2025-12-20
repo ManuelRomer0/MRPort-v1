@@ -9,6 +9,7 @@ export default {
 		extend: {
 			animation: {
 				text: 'text 4s infinite',
+				'color-cycle': 'color-cycle 4s infinite',
 			},
 			keyframes: {
 				text: {
@@ -20,6 +21,10 @@ export default {
 						'background-size': '200% 200%',
 						'background-position': 'right center'
 					}
+				},
+				'color-cycle': {
+					'0%, 100%': { color: '#B617E6' },
+					'50%': { color: '#FAAB00' },
 				}
 			}
 		},

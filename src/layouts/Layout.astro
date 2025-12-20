@@ -1,34 +1,38 @@
 ---
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/800.css';
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/800.css";
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
-	description: string
+	description: string;
+	lang?: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title, lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-		
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 
 	<body>
-		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_20%,#F4F4F4_50%,#B617E6_80%)] dark:[background:radial-gradient(120%_112%_at_50%_20%,#0f0c11_50%,#B617E6_150%)]"></div>
+		<div
+			class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_20%,#F4F4F4_50%,#B617E6_80%)] dark:[background:radial-gradient(120%_112%_at_50%_20%,#0f0c11_50%,#B617E6_150%)]"
+		>
+		</div>
 		<Header />
 		<slot />
 		<Footer />
@@ -41,7 +45,7 @@ const { description, title } = Astro.props;
 	}
 
 	html {
-		font-family: 'Inter', sans-serif;
+		font-family: "Inter", sans-serif;
 		scroll-behavior: smooth;
 	}
 

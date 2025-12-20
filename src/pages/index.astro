@@ -6,11 +6,16 @@ import Button from "../components/Button.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Forms from "../components/Forms.astro";
+import Stack from "../components/Stack.astro";
+
+import { LANGUAGES } from "../i18n/index";
+const { hero, experience, projects, sectionTitles, form } = LANGUAGES.en;
 ---
 
 <Layout
 	title="Manuel Romero | Web Design & Software Development portfolio"
 	description="Hire Manuel Romero to design your brand and create your professional website. wide range of experience in design and frontend development."
+	lang="en"
 >
 	<main class="justify-center items-center px-4">
 		<SectionContainer class="py-44 pb-20">
@@ -26,20 +31,20 @@ import Forms from "../components/Forms.astro";
 						<h1
 							class="text-[#0f0c11] dark:text-[#F4F4F4] font-semibold flex flex-row gap-x-4 text-lg text-start justify-start md:text-center md:text-2xl mb-2"
 						>
-							Manuel Andrés Romero Moreno
+							{hero.title}
 						</h1>
 
 						<a
-							href="https://linkedin.com/in/tu-usuario"
+							href="https://www.linkedin.com/in/manuelromer0/"
 							target="_blank"
 							rel="noopener"
 							class="flex justify-start gap-2 md:gap-4"
 						>
 							<Badge class="justify-center"
-								>Available - Let's talk!</Badge
+								>{hero.badgeAvailable}</Badge
 							>
 							<Badge class="justify-center"
-								>Barranquilla, COL</Badge
+								>{hero.badgeLocation}</Badge
 							>
 						</a>
 					</div>
@@ -51,17 +56,17 @@ import Forms from "../components/Forms.astro";
 				class="justify-center text-xl leading-tight font-bold text-wrap max-w-[1000px] md:text-5xl"
 			>
 				<p class="text-[#0f0c11] dark:text-[#F4F4F4]/80">
-					Making stuff on the web.
+					{hero.intro1}
 				</p>
 				<span class="text-[#0f0c11] dark:text-[#F4F4F4]/80"
-					>I love contributing to the creative and technical
+					>{hero.intro2}
 				</span>
 				<span
 					class="relative group animate-text bg-gradient-to-r from-[#B617E6] via-[#FAAB00] to-[#B617E6] bg-clip-text text-transparent transition"
-					>development
+					>{hero.introHighlight}
 				</span>
 				<span class="text-[#0f0c11] dark:text-[#F4F4F4]/80">
-					of user interfaces, webs and apps.</span
+					{hero.intro3}</span
 				>
 			</h2>
 
@@ -75,7 +80,7 @@ import Forms from "../components/Forms.astro";
 								alt="Button icon"
 								class="w-3 md:w-7"
 							/>
-							Download Resume
+							{hero.downloadResume}
 						</p>
 					</Button>
 				</a>
@@ -87,7 +92,7 @@ import Forms from "../components/Forms.astro";
 								alt="Button icon"
 								class="w-3 md:w-7"
 							/>
-							View Projects
+							{hero.viewProjects}
 						</p>
 					</Button>
 				</a>
@@ -99,7 +104,7 @@ import Forms from "../components/Forms.astro";
 								alt="Button icon"
 								class="w-3 md:w-7"
 							/>
-							Social Links
+							{hero.socialLinks}
 						</p>
 					</Button>
 				</a>
@@ -110,22 +115,26 @@ import Forms from "../components/Forms.astro";
 			<h3
 				class="text-[#0f0c11] dark:text-[#F4F4F4] text-4xl font-semibold md:pt-20 mb-12"
 			>
-				Experience
+				{sectionTitles.experience}
 			</h3>
-			<Experience />
+			<Experience experience={experience} />
 		</SectionContainer>
 
 		<SectionContainer id="projects">
 			<h3
 				class="text-[#0f0c11] dark:text-[#F4F4F4] text-4xl font-semibold md:pt-20 mb-12"
 			>
-				Projects
+				{sectionTitles.projects}
 			</h3>
-			<Projects />
+			<Projects projects={projects} />
+		</SectionContainer>
+
+		<SectionContainer id="stack">
+			<Stack />
 		</SectionContainer>
 
 		<SectionContainer id="contact">
-			<Forms />
+			<Forms form={form} />
 		</SectionContainer>
 	</main>
 	<a
