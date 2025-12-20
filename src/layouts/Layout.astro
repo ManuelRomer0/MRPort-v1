@@ -17,7 +17,7 @@ const { description, title, lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="bg-[#F4F4F4] dark:bg-[#0f0c11]">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -34,7 +34,7 @@ const { description, title, lang = "es" } = Astro.props;
 
 	<body>
 		<div
-			class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_20%,#F4F4F4_50%,#B617E6_80%)] dark:[background:radial-gradient(120%_112%_at_50%_20%,#0f0c11_50%,#B617E6_150%)]"
+			class="fixed inset-0 -z-10 items-center [background:radial-gradient(125%_125%_at_50%_20%,#F4F4F4_50%,#B617E6_80%)] dark:[background:radial-gradient(120%_112%_at_50%_20%,#0f0c11_50%,#B617E6_150%)]"
 		>
 		</div>
 		<Header />
@@ -51,13 +51,14 @@ const { description, title, lang = "es" } = Astro.props;
 	html {
 		font-family: "Inter", sans-serif;
 		scroll-behavior: smooth;
+		overflow-x: hidden;
 	}
 
 	body {
-		background: #e8e4ea;
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		min-height: 100vh;
+		overflow-x: hidden;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
