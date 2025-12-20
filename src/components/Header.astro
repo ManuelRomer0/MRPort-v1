@@ -7,7 +7,8 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = isSpanish ? LANGUAGES.es.nav : LANGUAGES.en.nav;
 const langButtonText = isSpanish ? "EN" : "ES";
-const langUrl = isSpanish ? "/" : "/es";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const langUrl = isSpanish ? `${base}/` : `${base}/es`;
 ---
 
 <header
@@ -88,7 +89,17 @@ const langUrl = isSpanish ? "/" : "/es";
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-[#0f0c11] bg-[#B617E6]/40 ring-[#f4f4f4]/10;
+      @apply shadow-lg ring-1 backdrop-blur bg-[#B617E6]/40 ring-[#f4f4f4]/10;
+    }
+  }
+
+  :global(.dark) nav {
+    animation-name: nav-shadown-dark;
+  }
+
+  @keyframes nav-shadown-dark {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur bg-[#0f0c11] ring-[#f4f4f4]/10;
     }
   }
 </style>
