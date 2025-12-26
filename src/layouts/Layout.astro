@@ -3,6 +3,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/800.css";
+import "../styles/light-mode.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -17,7 +18,7 @@ const { description, title, lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang} class="bg-[#F4F4F4] dark:bg-[#0f0c11]">
+<html lang={lang} class="bg-white dark:bg-[#0f0c11]">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
