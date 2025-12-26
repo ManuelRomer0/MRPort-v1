@@ -71,7 +71,29 @@ const STACK = [
 
 <style>
     .stack-icon {
-        animation-fill-mode: both;
+        /* Sin animación por defecto: mantener color original de cada tecnología */
+        animation: none;
+        transition: color 150ms ease, transform 150ms ease;
+    }
+
+    @keyframes development {
+        0% {
+            transform: scale(1) rotate(0deg);
+            filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+        }
+        50% {
+            transform: scale(1.08) rotate(6deg);
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+        }
+        100% {
+            transform: scale(1) rotate(0deg);
+            filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+        }
+    }
+
+    /* Aplicar la animación solo mientras el cursor esté encima */
+    .group:hover .stack-icon {
+        animation: development 800ms ease-in-out infinite !important;
     }
 </style>
 
@@ -88,7 +110,7 @@ const STACK = [
                         <svg
                             role="img"
                             viewBox="0 0 24 24"
-                            class={`stack-icon w-12 h-12 fill-current animate-stack-color-cycle hover:animate-none transition duration-300 ${hoverClass}`}
+                            class={`stack-icon w-12 h-12 fill-current transition duration-300`}
                             style={`color: ${color};`}
                             xmlns="http://www.w3.org/2000/svg"
                         >
