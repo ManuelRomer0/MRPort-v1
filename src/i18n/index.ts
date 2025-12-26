@@ -88,24 +88,33 @@ export const LANGUAGES = {
         },
         experience: [
             {
-                date: "Oct 2025 - Present",
+                date: "Sep 2025 - Present",
+                title: "Frontend Developer",
+                company: "CodeSierra",
+                description: "I developed modern, responsive web interfaces at Codesierra, transforming designs and requirements into user-centered experiences. I collaborated with backend and design teams to integrate APIs, optimize navigation, and improve performance, applying best practices and reusable components",
+                stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | GitHub | Sequelize",
+                
+            },
+            {
+                date: "May 2025 - Present",
                 title: "Web Designer & Developer",
                 company: "Freelance",
-                description: "Since April 2025, I have been working independently in web design and development, collaborating with clients and local businesses to create and strengthen their digital presence. I develop websites and applications using technologies such as Angular and Tailwind CSS on the frontend, and Node.js with NestJS and PostgreSQL on the backend.",
+                description: "Since May 2025, I have been working independently in web design and development, collaborating with clients and local businesses to create and strengthen their digital presence. I develop websites and applications using technologies such as Angular and Tailwind CSS on the frontend, and Node.js with NestJS and PostgreSQL on the backend",
                 stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | Prisma | GitHub",
-                // stack: "HTML | CSS | JavaScript | React | Astro | NEXT.js | Figma | AdobeCC" 
             },
         ],
         projects: [
             {
                 title: "MrStore",
-                description: "HTML, CSS and JavaScript challenges website. Learn or practice your web development skills according to your level.",
+                description: "Full stack project with Angular and NestJS that implements user authentication and a basic dashboard, with an architecture designed to scale and add new features.",
                 link: "https://github.com/ManuelRomer0/Mrstore-Front",
                 image: "/MRPort-v1/projects/mrstore.webp",
                 tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.JAVASCRIPT, TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.PRISMA],
             },
         ]
     },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     es: {
         nav: [
             { title: "Inicio", label: "inicio", url: "#" },
@@ -135,17 +144,25 @@ export const LANGUAGES = {
         },
         experience: [
             {
-                date: "Oct 2025 - Presente",
+                date: "Sep 2025 - Presente",
+                title: "Desarrollador Frontend",
+                company: "CodeSierra",
+                description: "Desarrollé interfaces web modernas y responsivas en Codesierra, transformando diseños y requerimientos en experiencias centradas en el usuario. Colaboré con los equipos de backend y diseño para integrar APIs, optimizar la navegación y mejorar el rendimiento, aplicando buenas prácticas y componentes reutilizables",
+                stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | GitHub | Sequelize",
+            },
+            {
+                date: "May 2025 - Presente",
                 title: "Diseñador Web y Desarrollador",
                 company: "Freelance",
-                description: "Desde abril de 2025, he estado trabajando de forma independiente en diseño y desarrollo web, colaborando con clientes y negocios locales para crear y fortalecer su presencia digital. Desarrollo sitios web y aplicaciones utilizando tecnologías como Angular y Tailwind CSS en el frontend, y Node.js con NestJS y PostgreSQL en el backend.",
+                description: "Desde mayo de 2025, he estado trabajando de forma independiente en diseño y desarrollo web, colaborando con clientes y negocios locales para crear y fortalecer su presencia digital. Desarrollo sitios web y aplicaciones utilizando tecnologías como Angular y Tailwind CSS en el frontend, y Node.js con NestJS y PostgreSQL en el backend",
                 stack: "HTML | CSS | JavaScript | Angular | NestJs | PostgreSQL | Prisma | GitHub",
             },
+
         ],
         projects: [
             {
                 title: "MrStore",
-                description: "Sitio web de retos HTML, CSS y JavaScript. Aprende o practica tus habilidades de desarrollo web según tu nivel.",
+                description: "Proyecto full stack con Angular y NestJS que implementa autenticación de usuarios y un dashboard base, con una arquitectura pensada para escalar y agregar nuevas funcionalidades.",
                 link: "https://github.com/ManuelRomer0/Mrstore-Front",
                 image: "/MRPort-v1/projects/mrstore.webp",
                 tags: [TAGS.WEBDEV, TAGS.DESIGN, TAGS.ANGULAR, TAGS.TAILWINDCSS, TAGS.JAVASCRIPT, TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.PRISMA],

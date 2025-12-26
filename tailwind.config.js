@@ -10,6 +10,7 @@ export default {
 			animation: {
 				text: 'text 4s infinite',
 				'color-cycle': 'color-cycle 4s infinite',
+				'stack-color-cycle': 'stack-color-cycle 5s ease-in-out 1s infinite',
 			},
 			keyframes: {
 				text: {
@@ -25,6 +26,14 @@ export default {
 				'color-cycle': {
 					'0%, 100%': { color: '#B617E6' },
 					'50%': { color: '#FAAB00' },
+				},
+				'stack-color-cycle': {
+					'0%': { color: '#FFFFFF' },
+					'20%': { color: '#B617E6' },
+					'40%': { color: '#FAAB00' },
+					'60%': { color: '#61DAFB' },
+					'80%': { color: '#BC52EE' },
+					'100%': { color: '#FFFFFF' },
 				}
 			}
 		},
